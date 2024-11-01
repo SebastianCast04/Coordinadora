@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "716208557783",
+    "project_id": "candidato-jhoansebastiancastil",
+    "storage_bucket": "candidato-jhoansebastiancastil.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716208557783:android:1b83824ecc240928f6ea92",
+        "android_client_info": {
+          "package_name": "com.example.coordinadoraapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzZxdfl43XhqsGKaP4DWlAx58wwcRAk3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
