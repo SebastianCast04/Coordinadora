@@ -40,8 +40,8 @@ jobs:
       - name: Get version from build.gradle
         id: get_version
         run: |
-          VERSION=$(grep 'versionName' app/build.gradle | awk '{print $2}' | tr -d '"')
-          echo "VERSION=$VERSION" >> $GITHUB_ENV 
+          VERSION=$(grep 'versionName' app/build.gradle | tail -n 1 | awk '{print $2}' | tr -d '"')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Execute Gradle command - assembleDebug
         run: ./gradlew assembleDebug
@@ -55,7 +55,6 @@ jobs:
           file: app/build/outputs/apk/debug/app-debug.apk
           releaseNotes: | 
             ${{ inputs.release_notes }}
-            Version: ${{ env.VERSION }}  # Usar la variable de entorno
-            Commit: ${{ github.sha }}
+            Version: ${{ env.VERSION }}
 
 
