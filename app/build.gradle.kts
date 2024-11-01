@@ -122,6 +122,7 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     debugImplementation(libs.compose.ui.tooling)
 
+    //Para navegación
     implementation("cafe.adriel.voyager:voyager-hilt:1.1.0-beta02")
 }
 
