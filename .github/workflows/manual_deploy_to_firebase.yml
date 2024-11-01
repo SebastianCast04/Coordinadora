@@ -43,6 +43,11 @@ jobs:
           VERSION=$(grep 'versionName' app/build.gradle | tail -n 1 | awk '{print $2}' | tr -d '"')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
+      - name: Debug Environment Variables
+        run: |
+          echo "Extracted VERSION: ${{ env.VERSION }}"
+          echo "GITHUB SHA: ${{ github.sha }}"
+
       - name: Execute Gradle command - assembleDebug
         run: ./gradlew assembleDebug
 
@@ -56,5 +61,6 @@ jobs:
           releaseNotes: | 
             ${{ inputs.release_notes }}
             Version: ${{ env.VERSION }}
+            Commit: ${{ github.sha }}
 
 
