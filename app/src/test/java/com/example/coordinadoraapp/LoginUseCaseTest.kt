@@ -23,7 +23,7 @@ class LoginUseCaseTest {
     @Mock
     private lateinit var authRepository: AuthRepository
 
-    // El caso de uso que vamos a probar
+    // El caso de uso que vamos a probarr
     private lateinit var loginUseCase: LoginUseCase
 
     @Before
