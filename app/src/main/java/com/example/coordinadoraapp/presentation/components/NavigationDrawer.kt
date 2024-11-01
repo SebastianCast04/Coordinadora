@@ -135,6 +135,11 @@ fun NavigationDrawerContent(
                 icon = ScreensDrawerEnum.EspecialServices.image,
                 menu = ScreensDrawerEnum.EspecialServices.order
             ),
+            NavigationItem(
+                title = ScreensDrawerEnum.SignOff.title,
+                icon = ScreensDrawerEnum.SignOff.image,
+                menu = ScreensDrawerEnum.SignOff.order
+            ),
         )
         ModalNavigationDrawer(
             drawerContent = {
@@ -280,6 +285,12 @@ fun NavigationDrawerContent(
 
                                         ScreensDrawerEnum.EspecialServices.order -> {
                                             if (page.order != ScreensDrawerEnum.EspecialServices.order) {
+                                            }
+                                        }
+
+                                        ScreensDrawerEnum.SignOff.order -> {
+                                            if (page.order != ScreensDrawerEnum.SignOff.order) {
+                                                showDialog.value = true
                                             }
                                         }
                                     }

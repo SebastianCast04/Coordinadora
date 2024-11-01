@@ -31,7 +31,6 @@ import com.example.coordinadoraapp.R
 import com.example.coordinadoraapp.presentation.theme.colorScheme
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun closeSesionDialog(
     showDialog: Boolean,
@@ -43,53 +42,7 @@ fun closeSesionDialog(
         AlertDialog(
             onDismissRequest = onDismissRequest,
             properties = DialogProperties(dismissOnBackPress = false),
-            modifier = Modifier.height(180.dp),
-            confirmButton = {
-                Button(
-                    shape = RoundedCornerShape(20.dp),
-                    modifier = Modifier.padding(horizontal = 60.dp),
-                    border = BorderStroke(0.5.dp, colorScheme.onSecondary),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFF1464AC)
-                    ),
-                    onClick = {
-                        onConfirm()
-                    }
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text(
-                            text = "Aceptar",
-                            color = colorScheme.primary
-                        )
-                    }
-                }
-            },
-            dismissButton = {
-                Button(
-                    shape = RoundedCornerShape(20.dp),
-                    modifier = Modifier.padding(horizontal = 60.dp),
-                    border = BorderStroke(0.5.dp, colorScheme.onSecondary),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = colorScheme.primary
-                    ),
-                    onClick = {
-                        onCancel()
-                    }
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text(
-                            text = "Cancelar",
-                            color = colorScheme.onSecondary
-                        )
-                    }
-                }
-            },
+            modifier = Modifier.height(220.dp),
             title = {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -97,7 +50,7 @@ fun closeSesionDialog(
                 ) {
                     Text(
                         text = "Cerrar sesión",
-                        color = Color(0XFF3D761B),
+                        color = Color(0xFF1464AC),
                         fontWeight = FontWeight(500),
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(bottom = 10.dp),
@@ -107,14 +60,55 @@ fun closeSesionDialog(
             },
             text = {
                 Text(
-                    text = "Estás a punto de cerrar la aplicación. ¿Deseas salir?", // Texto descriptivo
+                    text = "Estás a punto de cerrar la aplicación. ¿Deseas salir?",
                     color = colorScheme.surface,
                     modifier = Modifier.padding(top = 6.dp),
                     textAlign = TextAlign.Center
                 )
             },
-            containerColor = colorScheme.primary, // Fondo del AlertDialog
-            textContentColor = colorScheme.inverseSurface
+            containerColor = colorScheme.primary,
+            textContentColor = colorScheme.inverseSurface,
+            confirmButton = {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Button(
+                        shape = RoundedCornerShape(20.dp),
+                        border = BorderStroke(0.5.dp, colorScheme.onSecondary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(0xFF1464AC),
+                        ),
+                        onClick = {
+                            onConfirm()
+                        }
+                    ) {
+                        Text(
+                            text = "Aceptar",
+                            color = colorScheme.primary
+                        )
+                    }
+
+                    Button(
+                        shape = RoundedCornerShape(20.dp),
+                        border = BorderStroke(0.5.dp, colorScheme.onSecondary),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorScheme.primary
+                        ),
+                        onClick = {
+                            onCancel()
+                        }
+                    ) {
+                        Text(
+                            text = "Cancelar",
+                            color = colorScheme.onSecondary
+                        )
+                    }
+                }
+            },
+            dismissButton = {
+                // Puedes dejarlo vacío o agregar algún contenido si es necesario
+            }
         )
     }
 }

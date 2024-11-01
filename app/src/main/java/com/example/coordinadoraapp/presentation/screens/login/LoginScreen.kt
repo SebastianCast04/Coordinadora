@@ -17,6 +17,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -229,7 +231,8 @@ fun LoginScreenContent(
                 onValueChange = { password = it },
                 placeHolder = "Contraseña",
                 isPassword = true,
-                iconColor = colorScheme.inverseSurface
+                iconColor = colorScheme.inverseSurface,
+                icon = Icons.Filled.AccountCircle
             )
         }
 

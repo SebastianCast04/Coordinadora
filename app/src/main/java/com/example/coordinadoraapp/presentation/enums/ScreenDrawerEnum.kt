@@ -6,7 +6,7 @@ enum class ScreensDrawerEnum (val order: Int, val title: String, val image: Int)
 
     Main(
         order = 0,
-        title = "Home",
+        title = "Menú principal",
         image = R.drawable.casita),
 
     Track(
@@ -21,4 +21,9 @@ enum class ScreensDrawerEnum (val order: Int, val title: String, val image: Int)
         order = 3,
         title = "Servicios especiales",
         image = R.drawable.servicios_especiales),
+    SignOff(
+        order = 4,
+        title = "Cerra sesión",
+        image = R.drawable.cerrar
+    )
 }
